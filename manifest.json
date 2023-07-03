@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Prompt Loom",
+    "version": "1.0",
+    "description": "Cultivate, Collect, and Blossom Your ChatGPT Prompts",
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "logo.png"
+    },
+    "permissions": ["contextMenus","tabs"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://developer.chrome.com/docs/extensions/*",
+            "https://developer.chrome.com/docs/webstore/*",
+            "https://chat.openai.com/*"
+          ]
+        }
+      ]
+  }

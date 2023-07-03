@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css" />
+    <title>Prompt Loom</title>
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgb(0 175 185 / var(--tw-bg-opacity));
+            box-shadow: inset 0 0 5px #f7f7f7;
+            border-radius: 30px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #ffffff;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(0 129 167 / var(--tw-bg-opacity));
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body class="w-80 p-2 bg-darkBlue text-white text-sm pb-10">
+    <div id="errorDisplay" class="transition-all duration-1000"></div>
+    <p class="font-bold text-base mb-2">Prompt Loom</p>
+    <div>
+        <form class="w-full flex justify-between p-2">
+            <input id="loomInput" type="text"
+                class="ring-0 border-0 focus:ring-0 focus:border-0 p-1 rounded-md w-56 text-black" />
+            <button class="bg-orangish px-2 py-1 rounded-md" id="saveBtn">Save</button>
+        </form>
+        <div class="m-2 font-bold flex justify-between items-center">
+            <span>Your Looms</span>
+            <span id="gptBtn" class="flex gap-2 items-center cursor-pointer w-">
+              Open<img src="https://img.uxwing.com/wp-content/themes/uxwing/download/brands-social-media/chatgpt-icon.svg" class="w-8" alt="chat gpt icon"/>
+            </span>
+        </div>
+
+        <div class="overflow-y-auto h-96 rounded-lg relative">
+            <div class="bg-lightBlue h-full top-0 left-0 blur-3xl fixed">
+
+            </div>
+            <div class="absolute h-full top-0 left-0 p-2">
+                <div id="promptList" class="flex flex-col gap-4 list-none"></div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed w-full h-16 bottom-0 bg-gradient-to-t from-white to-transparent -ml-2"></div>
+</body>
+<script src="popup.js"></script>
+
+</html>
